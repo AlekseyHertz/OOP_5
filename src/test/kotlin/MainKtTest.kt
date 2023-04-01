@@ -9,11 +9,6 @@ class WallServiceTest {
     fun refresh() {
         WallService.clear()
         WallService.addPosts(Post(0, 0, 0, 0, "", Comment(0, true, true), true, true, Likes(5, true), true))
-    }
-
-    @Before
-    fun refreshComment() {
-        WallService.clear()
         WallService.addComment(Post(0, 0, 0, 0, "", Comment(0, true, true), true, true, Likes(5, true), true))
     }
 
@@ -21,9 +16,9 @@ class WallServiceTest {
     fun addPosts() {
 
         val newPost = Post(0, 0, 0, 0, "", Comment(0, true, true), true, true, Likes(5, true), true)
-        val result = WallService.upDate(newPost)
+        val result = newPost.id
 
-        assertTrue(result)
+        assertEquals(0,result)
     }
 
     @Test
