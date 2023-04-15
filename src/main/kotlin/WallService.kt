@@ -25,7 +25,7 @@ object WallService {
     }
 
     fun addComment(post: Post): Comment {
-        comment += post.commentCount.copy(countComment = lastId++)
+        comment += post.commentCount!!.copy(countComment = lastId++)
         return comment.last()
     }
 
